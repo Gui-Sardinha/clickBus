@@ -25,6 +25,8 @@ public class Place implements Serializable{
 	private String slug;
 	private String city;
 	private String state;
+	private Double price;
+	private String img;
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
 	private Instant createdAt;
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
@@ -34,12 +36,14 @@ public class Place implements Serializable{
 		
 	}
 
-	public Place(Long id, String name, String slug, String city, String state, Instant createdAt, Instant updatedAt) {
+	public Place(Long id, String name, String slug, String city, String state, Double price, String img, Instant createdAt, Instant updatedAt) {
 		this.id = id;
 		this.name = name;
 		this.slug = slug;
 		this.city = city;
 		this.state = state;
+		this.price = price;
+		this.img = img;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
 	}
@@ -82,6 +86,22 @@ public class Place implements Serializable{
 
 	public void setState(String state) {
 		this.state = state;
+	}
+
+	public Double getPrice() {
+		return price;
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
 	}
 
 	public Instant getCreatedAt() {

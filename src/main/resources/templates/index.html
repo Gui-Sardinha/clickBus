@@ -1,0 +1,106 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <title>ClickBus</title>
+   
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-text-box">
+          <h1>Conheça as cidades mais belas do Brasil</h1>
+          <p class="header-text">
+            Viaje com segurança, conforto e rapidez. Com  a ClickBus você compra sua passagem de ônibus em um click.
+          </p>
+          <a class="btn btn--big" th:href="@{/Places}">Comprar Passagem</a>
+        </div>
+        <img th:src="@{/img/sao-paulo.png}" alt="Photo" width="500px" height="500px" />
+      </header>
+
+      <section>
+        <h2>O que faz uma viagem ser inesquecivel</h2>
+        <div class="grid-3-cols">
+          <div>
+            <p class="features-title"><strong>Facilidade na compra</strong></p>
+            <p class="features-text">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus
+              similique adipisci praesentium.
+            </p>
+          </div>
+
+          <div>
+            <p class="features-title">
+              <strong>Conforto para viajar</strong>
+            </p>
+            <p class="features-text">
+              Reprehenderit optio placeat quasi excepturi architecto, explicabo
+              facilis perspiciatis error maxime magnam.
+            </p>
+          </div>
+
+          <div>
+            <p class="features-title">
+              <strong>Deleniti recusandae quidem </strong>
+            </p>
+            <p class="features-text">
+              Deleniti recusandae quidem nesciunt, eos dolorum iure, quaerat
+              omnis est laudantium voluptatem voluptas!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonial-section">
+        <div class="grid-3-cols">
+          <img th:src="@{/img/casal.png}" alt="Casal Mundo sem fim" />
+          <div class="testimonial-box">
+            <h2>"Nós nunca tivemos tanta facilidade em uma compra"</h2>
+            <blockquote class="testimonial-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
+              repellat at, nesciunt quia cum minima ipsum culpa totam sapiente
+              recusandae earum debitis doloribus in quasi voluptatibus!
+            </blockquote>
+            <p class="testimonial-author">&mdash; Casal Mundo sem fim</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Promoções</h2>
+        <div class="grid-3-cols">
+          <figure class="place" th:each = "place: ${Places}">
+             <img th:src ="${place.img}" alt="Place" height="170"  width="150" />
+            <div class="place-box">
+              <h3 th:text="${place.name}">Rio de Janeiro</h3>
+              <ul class="place-details">
+                <li>
+                  <span th:text="${place.state}">Estado</span>
+                </li>
+                <li>
+                  <span th:text="${place.slug}">Slug</span>
+                </li>
+                <li>
+                  <span th:text="${place.city}">City</span>
+                </li>
+                <li>
+                  <span th:text="${place.createdAt}">Created</span>
+                </li>
+              </ul>
+              <div class="place-price">
+                <strong th:text="'R$ ' + ${place.price}">250</strong>
+                <a href="#" class="btn btn--small">Comprar</a>
+              </div>
+            </div>
+          </figure>
+     
+      </section>
+
+      <footer>
+        Copyright &copy; 2027 by Guilherme Sardinha. Teste para ver como funciona o thymeleaf.
+      </footer>
+    </div>
+  </body>
+</html>

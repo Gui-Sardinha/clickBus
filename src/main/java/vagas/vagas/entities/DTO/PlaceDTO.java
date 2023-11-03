@@ -12,6 +12,8 @@ public class PlaceDTO {
 	private String slug;
 	private String city;
 	private String state;
+	private Double price;
+	private String img;
 	private Instant createdAt;
 	private Instant updatedAt;
 	
@@ -21,13 +23,15 @@ public class PlaceDTO {
 	}
 
 
-	public PlaceDTO(Long id, String name, String slug, String city, String state, Instant createdAt,
+	public PlaceDTO(Long id, String name, String slug, String city, String state, Double price, String img, Instant createdAt,
 			Instant updatedAt) {
 		this.id = id;
 		this.name = name;
 		this.slug = slug;
 		this.city = city;
 		this.state = state;
+		this.price = price;
+		this.img = img;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
 	}
@@ -38,6 +42,8 @@ public class PlaceDTO {
 		slug = place.getSlug();
 		city = place.getCity();
 		state = place.getState();
+		price = place.getPrice();
+		img = place.getImg();
 		createdAt = place.getCreatedAt();
 		updatedAt = place.getUpdatedAt();
 	}
@@ -90,6 +96,26 @@ public class PlaceDTO {
 
 	public void setState(String state) {
 		this.state = state;
+	}
+	
+	
+	public Double getPrice() {
+		return price;
+	}
+
+
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
+
+	public String getImg() {
+		return img;
+	}
+
+
+	public void setImg(String img) {
+		this.img = img;
 	}
 
 

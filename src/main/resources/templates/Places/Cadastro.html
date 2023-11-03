@@ -1,0 +1,49 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/css/style3.css}" />
+    <title>Cadastro de Passagens</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-text-box">
+          <h1>Encontre o seu próximo destino</h1>
+		 <nav>
+			<a th:href ="@{/principal}">Principal</a>
+			  <a href ="#">Login</a>
+			  <a th:href="@{/Places}">Comprar</a>
+		  </nav>
+      </header>
+      <div class="header-text"> 
+        <h2>Cadastro de Destino</h>
+      </div>
+
+      <div class = "form">
+      <form action="/Places" method="POST">
+        <label class = "state-label">State:</label>
+        <input class = "state" placeholder="state" type="text" name="state">
+        <label class = "city-label">City:</label>
+        <input class = "city" placeholder="city"  type="text" name="city">
+        <label class = "slang-label">Slug:</label>
+        <input class = "slang" placeholder="slug" type="text" name="slug">
+        <label class = "name-label">Name:</label>
+        <input class = "name" placeholder="name" type="text" name="name">
+        <label class = "price-label">Price:</label>
+        <input class = "price" placeholder="price" type="text" name="price">
+        <label class = "image-label">Image URL:</label>
+        <input class = "img" placeholder="image URL" type="text" name="img">
+        <button type ="submit">Cadastrar</button>
+      </form>
+      
+    </div>
+
+      <footer>
+       Copyright &copy; 2027 by Guilherme Sardinha. Teste para ver como funciona o thymeleaf.
+      </footer>
+    </div>
+    
+  </body>
+</html>

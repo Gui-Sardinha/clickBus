@@ -1,0 +1,56 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/css/style2.css}" />
+    <title>ClickBus</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-text-box">
+          <h1>Encontre o seu próximo destino</h1>
+		 <nav>
+			<a th:href ="@{/principal}">Principal</a>
+			  <a href ="#">Login</a>
+			  <a th:href ="@{/Cadastro}">Cadastro</a>
+		  </nav>
+      </header>
+      <section>
+        <div class="grid-3-cols">
+          <figure class="place" th:each="place: ${Places}">
+            <img th:src="${place.img}" alt="Place" height="170"  width="150"/>
+            <div class="place-box">
+              <h3 th:text="${place.name}">name</h3>
+              <ul class="place-details">
+                <li>
+                  <span th:text="${place.state}">state</span>
+                </li>
+                <li>
+                  <span th:text="${place.slug}">slug</span>
+                </li>
+                <li>
+                  <span th:text="${place.city}">city</span>
+                </li>
+                <li>
+                  <span th:text="${place.createdAt}">created</span>
+                </li>
+              </ul>
+              <div class="place-price">
+                <strong th:text="'R$ ' + ${place.price}">250€</strong>
+                <a href="#" class="btn btn--small">Comprar</a>
+              </div>
+            </div>
+          </figure>
+
+        </div>
+      </section>
+
+      <footer>
+       Copyright &copy; 2027 by Guilherme Sardinha. Teste para ver como funciona o thymeleaf.
+      </footer>
+    </div>
+  </body>
+</html>
